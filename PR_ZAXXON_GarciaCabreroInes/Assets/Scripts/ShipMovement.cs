@@ -6,9 +6,11 @@ public class ShipMovement : MonoBehaviour
 {
     
 
-    //Velocidad nave
+    //Velocidades de la nave en x e y
     /*[SerializeField] float speedx = 10f;
     [SerializeField] float speedy = 10f;*/
+
+
     [SerializeField] float speedShip = 10f;
 
     /*public bool life = true;*/
@@ -36,7 +38,7 @@ public class ShipMovement : MonoBehaviour
 
     }
 
-
+    //Corrutina de movimiento
     void ShipMove()
     {
        
@@ -47,7 +49,7 @@ public class ShipMovement : MonoBehaviour
         float posx = transform.position.x;
         float posy = transform.position.y;
 
-        //Limites
+        //Limites donde se mueve la nave
         if (inLimitH)
         {
             transform.Translate(Vector3.right * Time.deltaTime * x * speedShip, Space.World);
@@ -58,7 +60,7 @@ public class ShipMovement : MonoBehaviour
             transform.Translate(Vector3.up * Time.deltaTime * y * speedShip, Space.World);
         }
 
-        //Limites movimiento
+        //Limites donde la nave no se mueve
         if ((posx > limiteR && x > 0) || (posx < limiteL && x < 0))
         {
             inLimitH = false;
@@ -79,12 +81,13 @@ public class ShipMovement : MonoBehaviour
 
 
 
-        //Mmovimiento de nave por velocidades
+        //Mmovimiento de nave usando 2 velocidades (en x y en y )
+        
 
-        //transform.Translate(Vector3.left * Time.deltaTime * x * speedShip);
-        //transform.Translate(Vector3.up * Time.deltaTime * y * speedShip);
+        /*transform.Translate(Vector3.left * Time.deltaTime * x * speedShip);
+        transform.Translate(Vector3.up * Time.deltaTime * y * speedShip);
 
-        /* if (posx > limiteR && x > 0 || posx < limiteL && x <0)
+         if (posx > limiteR && x > 0 || posx < limiteL && x <0)
          {
              speedx = 0;
          }
@@ -131,11 +134,6 @@ public class ShipMovement : MonoBehaviour
 
     }
 
-   /*public void Destruir()
-    {
-        life = false;
-        Destroy(gameObject);
-    }
-    */
+
 
 }

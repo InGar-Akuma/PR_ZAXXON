@@ -9,23 +9,19 @@ public class MoveIndividual : MonoBehaviour
     InitGameScript initGameScript;
 
 
-    //float speedTentaclo; 
-
     // Start is called before the first frame update
     void Start()
     {
-        initObject = GameObject.Find("InitGame");
-
-        initGameScript = initGameScript.GetComponent<InitGameScript>();
+        
+        initGameScript = GameObject.Find("InitGame").GetComponent<InitGameScript>();
         speedTentaculo = initGameScript.speedShipGlobal;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //speedTentaculo
-        //transform.Translate(Vector3.back * Time.deltaTime * speedTentaculo);
-
         speedTentaculo = initGameScript.speedShipGlobal;
         transform.Translate(Vector3.back * Time.deltaTime * speedTentaculo);
 

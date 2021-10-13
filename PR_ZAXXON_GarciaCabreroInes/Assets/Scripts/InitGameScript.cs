@@ -11,7 +11,8 @@ public class InitGameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedShipGlobal = 50f;
+        //Velocidad a la que se moveran los obstaculos
+        speedShipGlobal = 20f;
     }
 
     // Update is called once per frame

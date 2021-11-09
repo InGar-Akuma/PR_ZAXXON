@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: cbe55722eb18a2046bffd6764b79c3f9
+  - enabled: 1
+    path: Assets/Scenes/Zaxxon.unity
+    guid: ece2279b07cc8254d898cb05161180be
+  - enabled: 1
+    path: Assets/Scenes/Dead.unity
+    guid: 5b8db9485de81554ebe729d20a2cce7b
+  - enabled: 1
+    path: Assets/Scenes/HighScore.unity
+    guid: 9723cd19b7c1e1b4fbae22e561e26ef0
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: a9c10bee0e1eb63479b288fef301752e
   m_configObjects: {}

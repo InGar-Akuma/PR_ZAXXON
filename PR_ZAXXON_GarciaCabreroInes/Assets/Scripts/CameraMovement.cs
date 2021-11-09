@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    InitGameScript initGameScript;
 
     [SerializeField] Transform playerPosition;
     //Variables necesarias para la opción de suavizado
@@ -20,12 +21,8 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Con este código, conseguimos que siga al objeto pero con suavidad
-        //La velocidad de suavizado, cuanto menor sea más brusco será el movimiento
-        Vector3 targetPosition = new Vector3(playerPosition.position.x, playerPosition.position.y +1.25f, transform.position.z);
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref camaraVelocity, smoothVelocity);
-        //Opcional: que la cámara mire al objeto (la cámara no puede ser ortográfica)
-        //transform.LookAt(playerPosition);
-
+            Vector3 targetPosition = new Vector3(playerPosition.position.x, playerPosition.position.y + 1.5f, transform.position.z);
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref camaraVelocity, smoothVelocity);
+           
     }
 }

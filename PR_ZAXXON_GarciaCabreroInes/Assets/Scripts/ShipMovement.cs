@@ -1,33 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ShipMovement : MonoBehaviour
 {
-    
 
-    //Velocidades de la nave en x e y
-    /*[SerializeField] float speedx = 10f;
-    [SerializeField] float speedy = 10f;*/
+    InitGameScript initGameScript;
+    float speedShip = 20f;
 
-
-    [SerializeField] float speedShip = 10f;
-
-    /*public bool life = true;*/
+    public bool life = true;
 
     //Limites de movimiento
     float limiteR = 15f;
     float limiteL = -15f;
     float limiteU = 15f;
-    float limiteD = 0f;
+    float limiteD = -0.6f;
 
     bool inLimitH = true;
     bool inLimitY = true;
 
+    [SerializeField] GameObject shipPrefab;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        initGameScript = GameObject.Find("InitGame").GetComponent<InitGameScript>();
         
     }
 
@@ -79,61 +79,16 @@ public class ShipMovement : MonoBehaviour
             inLimitY = true;
         }
 
-
-
-        //Mmovimiento de nave usando 2 velocidades (en x y en y )
-        
-
-        /*transform.Translate(Vector3.left * Time.deltaTime * x * speedShip);
-        transform.Translate(Vector3.up * Time.deltaTime * y * speedShip);
-
-         if (posx > limiteR && x > 0 || posx < limiteL && x <0)
-         {
-             speedx = 0;
-         }
-         else
-         {
-             speedx = 10f;
-         }
-
-
-         if (posy > limiteU && y > 0 || posy < limiteD && y < 0)
-         {
-             speedy = 0;
-         }
-         else
-         {
-             speedy = 10f;
-         }
-        */
-
-
-
-        //Movimiento con las teclas wasd individualmente
-
-        /*if (Input.GetKey(KeyCode.W))
-        {            
-            transform.position += new Vector3(0, 1, 0) * Time.deltaTime * speed;
-
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += new Vector3(0, -1, 0) * Time.deltaTime * speed;
-
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * speed;
-
-        }
-        if (Input.GetKey(KeyCode.A))
-        {           
-            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * speed;
-
-        }*/
-
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+       if (other.gameObject.layer == 6)
+        {
+            initGameScript.SendMessage("Chocar");
+            Destroy(other.gameObject);
+        }
+    }
 
 
 }

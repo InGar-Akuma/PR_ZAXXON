@@ -23,10 +23,10 @@ public class MoveIndividual : MonoBehaviour
     void Update()
     {
         speedTentaculo = initGameScript.speedShipGlobal;
-        transform.Translate(Vector3.back * Time.deltaTime * speedTentaculo);
+        transform.Translate(Vector3.back * Time.deltaTime * speedTentaculo, Space.World);
 
         float posZ = transform.position.z;
-        print(posZ);
+        //print(posZ);
 
         if (posZ < -20)
         {

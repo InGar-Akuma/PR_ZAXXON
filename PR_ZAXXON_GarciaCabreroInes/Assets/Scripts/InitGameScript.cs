@@ -7,7 +7,7 @@ public class InitGameScript : MonoBehaviour
 {
     //Variables GLOBALES
     public float speedShipGlobal;
-    float score;
+    public float score;
 
     [SerializeField] float maxSpeed;
     public bool alive;
@@ -21,19 +21,31 @@ public class InitGameScript : MonoBehaviour
         speedShipGlobal = 20f;
         //score = 0;
         maxSpeed = 1000;
-        alive = true;
-        while (alive == true)
-        {
-            Score();
-        }
+        alive = true;        
     }
+
+    private void Update()
+    {
+        Score();
+    }
+
 
     // Update is called once per frame
-    void Update()
+    public void Score()
     {
-       
-    }
+        if (speedShipGlobal < maxSpeed && alive == true)
+        {
+            speedShipGlobal += 0.001f;
+        }
 
+        float time = Time.time;
+
+        score = Mathf.Round(time) * Mathf.Round(speedShipGlobal);
+        
+        //print(score);
+
+      
+}
     public void Dead()
     {
         print("Me he muerto");
@@ -51,22 +63,10 @@ public class InitGameScript : MonoBehaviour
         if (energy <= 0)
         {
             alive = false;
-            Dead();
+            Invoke ("Dead", 0.5f);
         }
         print("Energia = " + energy);
     }
-    public void Score()
-    {
-        if (speedShipGlobal < maxSpeed && alive == true)
-        {
-            speedShipGlobal += 0.001f;
-        }
-
-        float time = Time.time;
-
-        score = Mathf.Round(time) * speedShipGlobal;
-        print(score);
-
-    }
+   
      
 }

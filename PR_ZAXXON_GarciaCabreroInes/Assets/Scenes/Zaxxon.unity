@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: e6ede238e8063b7438e1cf28023ff791, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -524,7 +524,6 @@ GameObject:
   m_Component:
   - component: {fileID: 562485180}
   - component: {fileID: 562485179}
-  - component: {fileID: 562485181}
   m_Layer: 0
   m_Name: InitGame
   m_TagString: Untagged
@@ -545,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedShipGlobal: 100
+  score: 0
   maxSpeed: 0
   alive: 0
   energy: 100
@@ -562,24 +562,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &562485181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562485178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f489cbb9aa4c05f4392470aa020ac3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: {fileID: 1758761433}
-  livesArray:
-  - {fileID: 9200775849295203296, guid: 6c6b26b2b6ee4ed459f1318ca8ae354e, type: 3}
-  - {fileID: -4997167023504409373, guid: 6c6b26b2b6ee4ed459f1318ca8ae354e, type: 3}
-  - {fileID: -3837318412928117542, guid: 6c6b26b2b6ee4ed459f1318ca8ae354e, type: 3}
-  vidas: 0
 --- !u!1 &689515577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1758761432
 RectTransform:
   m_ObjectHideFlags: 0

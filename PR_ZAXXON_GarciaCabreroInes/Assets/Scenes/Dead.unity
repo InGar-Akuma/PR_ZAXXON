@@ -286,9 +286,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Menu
-
-'
+  m_Text: Menu
 --- !u!222 &170099047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -426,7 +424,10 @@ MonoBehaviour:
   score: 0
   maxSpeed: 0
   alive: 0
-  energy: 100
+  life: 2
+  scoreText: {fileID: 0}
+  speedSlider: {fileID: 0}
+  spritesLife: []
 --- !u!114 &471740443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +566,10 @@ MonoBehaviour:
   score: 0
   maxSpeed: 0
   alive: 0
-  energy: 100
+  life: 2
+  scoreText: {fileID: 0}
+  speedSlider: {fileID: 0}
+  spritesLife: []
 --- !u!1 &748662676
 GameObject:
   m_ObjectHideFlags: 0

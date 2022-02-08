@@ -22,7 +22,7 @@ public class ShipMovement : MonoBehaviour
     bool inLimitY = true;
 
     [SerializeField] GameObject shipPrefab;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,6 @@ public class ShipMovement : MonoBehaviour
     void Update()
     {
         ShipMove();
-
     }
 
     //Corrutina de movimiento
@@ -83,7 +82,13 @@ public class ShipMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-       if (other.gameObject.layer == 6)
+        print("CHOQUE");
+        if (other.gameObject.CompareTag("Cliff"))
+        {           
+            initGameScript.SendMessage("Chocar");
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Tentaculo"))
         {
             initGameScript.SendMessage("Chocar");
             Destroy(other.gameObject);

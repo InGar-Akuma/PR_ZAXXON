@@ -12,7 +12,7 @@ public class HSscript : MonoBehaviour
 
     private void Update()
     {
-        HStext.text = ("Total points: " + GameManager.highScore);
+        //HStext.text = ("Total points: " + GameManager.highScore);
     }
     public void Volver()
     {

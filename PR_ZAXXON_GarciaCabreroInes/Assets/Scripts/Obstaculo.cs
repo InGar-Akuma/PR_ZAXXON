@@ -12,14 +12,9 @@ public class Obstaculo : MonoBehaviour
     InitGameScript initGameScript;
 
     [SerializeField] float distanciaObstaculos = 30f;
-    //[SerializeField] float distPrimerObst = 60f;
 
     float intervalo =0.25f;
     
-    
-
-    //[SerializeField] int numTentaculos = 10;
-    //[SerializeField] int numFilas = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -29,24 +24,6 @@ public class Obstaculo : MonoBehaviour
         intervalo = distanciaObstaculos / initGameScript.speedShipGlobal;
 
         StartCoroutine("CreateObject");
-
-        //Creacion random de obstaculos
-        /*Vector3 newPos = initPos.position;
-
-        for (int n = 0; n < numTentaculos; n++)
-        {
-            
-            separacionx = Random.Range(-8f, 8f);
-           
-            Vector3 despl = new Vector3(separacionx, 0f, 0f);
-            
-            Instantiate(tentaculo, newPos, Quaternion.identity);
-            newPos = newPos + despl;         
-
-        }
-        */
-
-
     }
 
     void Update()
@@ -56,8 +33,7 @@ public class Obstaculo : MonoBehaviour
     }
 
    IEnumerator CreateObject()
-    {
-       
+    {       
         int n = 0;
         bool cliffInstantiated = false;
 
@@ -86,13 +62,13 @@ public class Obstaculo : MonoBehaviour
 
             if (arrayObst[randomNum].tag == "Tentaculo")
             {
-                pos = new Vector3(Random.Range(-15f, 15f), 0f, initPos.position.z);
+                pos = new Vector3(Random.Range(-15f, 15f), Random.Range(-15f, 0f), initPos.position.z);
                 Instantiate(arrayObst[randomNum], pos, Quaternion.Euler(new Vector3(0, Random.Range(0.0f, 360f), Random.Range(15f, 15f))));
             }
 
             if (arrayObst[randomNum].tag == "Cliff")
             {
-                pos = new Vector3(0f, 0f, initPos.position.z);
+                pos = new Vector3(0f, Random.Range(-10f, 0f), initPos.position.z);
                 Instantiate(arrayObst[randomNum], pos, Quaternion.identity);
             }
 

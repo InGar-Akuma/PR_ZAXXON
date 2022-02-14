@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    void start()
+    {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+    }
+
     public void IniciarJuego()
     {
         SceneManager.LoadScene(1);

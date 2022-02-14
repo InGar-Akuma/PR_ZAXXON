@@ -9,7 +9,10 @@ public class HSscript : MonoBehaviour
 {
 
     [SerializeField] Text HStext;
-
+    void start()
+    {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+    }
     private void Update()
     {
         //HStext.text = ("Total points: " + GameManager.highScore);

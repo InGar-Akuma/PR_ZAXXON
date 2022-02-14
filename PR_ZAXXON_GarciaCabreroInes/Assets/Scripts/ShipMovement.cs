@@ -8,7 +8,7 @@ public class ShipMovement : MonoBehaviour
 {
 
     InitGameScript initGameScript;
-    float speedShip = 20f;
+    public static float speedShip = 20f;
 
     public bool life = true;
 
@@ -40,7 +40,8 @@ public class ShipMovement : MonoBehaviour
     //Corrutina de movimiento
     void ShipMove()
     {
-       
+        if (!initGameScript.alive)
+            return;
         //Movimiento nave por bool
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -84,8 +85,8 @@ public class ShipMovement : MonoBehaviour
     {
         print("CHOQUE");
         if (other.gameObject.CompareTag("Cliff"))
-        {           
-            initGameScript.SendMessage("Chocar");
+        {
+            initGameScript.SendMessage("Moriste");
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Tentaculo"))

@@ -127,7 +127,7 @@ public class InitGameScript : MonoBehaviour
         barquito.SetActive(false);
         explosion.SetActive(true);
         bubble.SetActive(true);
-        Invoke("Dead", 4f);      
+        Invoke("Dead", 2f);      
     }
 
     public void Chocar()

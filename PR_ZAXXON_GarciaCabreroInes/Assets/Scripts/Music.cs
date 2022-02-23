@@ -8,8 +8,6 @@ public class Music : MonoBehaviour
     private GameObject[] other;
     private bool NotFirst = false;
 
-    //public static bool play;
-    //private AudioSource thiefMusic;
     // Start is called before the first frame update
     void Start()
     {

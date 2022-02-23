@@ -8,7 +8,8 @@ public class InitGameScript : MonoBehaviour
 {
         //Variables GLOBALES
     public float speedShipGlobal = 0f;
-    public static float score = 0f;
+    public static float highScore = 0f;
+    public static float score;
     string sceneName;
     Scene currentScene;
     float tiempo;
@@ -77,8 +78,8 @@ public class InitGameScript : MonoBehaviour
             Life();
         }
              
-        if (!alive)
-            ResetScore();
+       /* if (!alive)
+            ResetScore();*/
 
     }
 
@@ -90,10 +91,10 @@ public class InitGameScript : MonoBehaviour
         score = Mathf.Round(time) * Mathf.Round(speedShipGlobal);        
     }
 
-    public void ResetScore()
+    /*public void ResetScore()
     {
         score = 0;
-    }
+    }*/
 
     void UpdateUI()
     {
@@ -112,7 +113,10 @@ public class InitGameScript : MonoBehaviour
         ShipMovement.speedShip = 0f;
         print("Me he muerto");
         alive = false;
-        score = 0;
+        //score = 0;
+        if (score > highScore)
+            highScore = score;
+
         speedShipGlobal = 0f;
         //barquito.SetActive(false);
         Time.timeScale = 0;

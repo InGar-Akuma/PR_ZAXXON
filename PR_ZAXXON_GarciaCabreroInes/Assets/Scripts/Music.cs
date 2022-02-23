@@ -7,18 +7,16 @@ public class Music : MonoBehaviour
     private AudioSource thiefMusic;
     private GameObject[] other;
     private bool NotFirst = false;
-   
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        other = GameObject.FindGameObjectsWithTag("Music");
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     private void Awake()

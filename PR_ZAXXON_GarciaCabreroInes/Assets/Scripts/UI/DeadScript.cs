@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class DeadScript : MonoBehaviour
 {
-   public void Reintentar()
+
+    private void Start()
+    {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().StopMusic();
+    }
+
+    public void Reintentar()
     {
         SceneManager.LoadScene(1);
         InitGameScript.time = 0f;
@@ -18,7 +24,8 @@ public class DeadScript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         InitGameScript.time = 0f;
-        InitGameScript.score = 0f;
+        //InitGameScript.score = 0f;
         ShipMovement.speedShip = 20f;
     }
+
 }

@@ -550,6 +550,7 @@ MonoBehaviour:
   speedShipGlobal: 0
   maxSpeed: 0
   alive: 0
+  bubble: {fileID: 0}
   scoreText: {fileID: 0}
   speedSlider: {fileID: 0}
   heart1: {fileID: 0}
@@ -557,6 +558,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   life: 2
   barquito: {fileID: 0}
+  explosion: {fileID: 0}
 --- !u!114 &471740443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +696,7 @@ MonoBehaviour:
   speedShipGlobal: 0
   maxSpeed: 0
   alive: 0
+  bubble: {fileID: 0}
   scoreText: {fileID: 0}
   speedSlider: {fileID: 0}
   heart1: {fileID: 0}
@@ -701,6 +704,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   life: 2
   barquito: {fileID: 0}
+  explosion: {fileID: 0}
 --- !u!1 &748662676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1126520347}
   - component: {fileID: 1126520348}
+  - component: {fileID: 1126520346}
   m_Layer: 0
   m_Name: InitGame
   m_TagString: Untagged
@@ -1013,6 +1018,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1126520346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126520345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bec5157d51b4c4fa827dbe5db964ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1126520347
 Transform:
   m_ObjectHideFlags: 0
